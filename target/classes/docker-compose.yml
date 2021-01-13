@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  mymysql:
+    image: "mysql:5.6"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=abc12345
+      - MYSQL_DATABASE=satellite
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=abc12345
+    ports:
+      - "3306:3306"
+
+  location-mysql:
+    image: location-mysql
+    restart: on-failure
+    depends_on:
+      - mymysql
+    ports:
+      - 9080:9080
+    command: sh -c "/wait && /location-mysql"
+    environment:
+      - WAIT_HOSTS=mysql:3306

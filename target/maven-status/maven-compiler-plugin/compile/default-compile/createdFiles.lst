@@ -1,0 +1,6 @@
+com\satelliteconstellation\location\LocationApplication.class
+com\satelliteconstellation\location\exceptions\InvalidLocationReferenceException.class
+com\satelliteconstellation\location\entity\Location.class
+com\satelliteconstellation\location\service\LocationService.class
+com\satelliteconstellation\location\repository\LocationRepository.class
+com\satelliteconstellation\location\controller\LocationController.class
