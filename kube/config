@@ -1,0 +1,31 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1ERXlPREExTlRreU9Gb1hEVE14TURFeU5qQTFOVGt5T0Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT3NzCi9BWjJ6NHBRcHhGS3M3bmduR09DaHlQNnlGQk9CWVV4cHdqSllYeS9nYzZIWEx4aklKTTZsdUR0U2g0cElJcXUKSzlhTnpLTGpCa2VaUFZ2UWMvZkRmbHA1MHR6cndPUDkvNHBrZXJaK0IwOGxzcW9teTJPeTlLT2p3YlJxZEM0VQphRmlSeDAxRnZ1cXF4Ym1Yd3pGcnFHQWdLU0pZRDZqeWRKdE5KOVE5emFTb0lTS3ZYVUdFVHBET2tqYldySStBCnpvbDh4d0Q0dENJajN3UFhHUVhqOXlmZWcxT1VnVitJNlBWUEdOYk9WTHpOc1diMkFvMkIxQklCSm54bFNJM3kKd3dySWkxNGFzbllSZUhmMkZlS3dMM25KckFtRkEwaExKdndUTlBWd1hGU3Y3MVBvZGdENGQyc3I0UVBlczZrZAovYk1hZ25oWDdyVGU0WkFlSEZrQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFJTUtyaXpjS3J5OEp5NXQzUTMwZU40QTZDcWUKZW1oWUVHbW5HMWZjU3JTN1VwczFKUk1zbkwrR3h2RGdTbm1yK2hlTGlBT2dwK0Jzak1oell0NXBPTkpseXRBQgo5WVVYQWdxclhXc3N1N3htckZzUUczUVE0WjdXOFFxZ3pYTHBia2tqRFRIRzJQZ1pUclNRVUtIRE5LSGFUa2dMCkoxSnFkZ2VFYTh6UHRoQWNJdUViMkY5R2drQm5DNk5jL0VraHp3L21JRXMwSGxRelpvN3lIUU9YZ2xLVCtKbCsKa1psamVSaTVsdlgzNEI4cGtDOWlEUnVudzFlRWYySlBZMGoxcHJFMEVVSVJNTXNuaUkrQlRVR3dxb2FCbmlwUgoxWkdFMjJGTXc5b2UvNXExc041SE4zbk1rWWc5NjZlaGNVekk4L1FGWlZxQVJRQ01YOXlLKzc2T2pKYz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://09C3603A163DCA783FDFCE50D1386F62.gr7.us-east-1.eks.amazonaws.com
+  name: satellite-cluster.us-east-1.eksctl.io
+contexts:
+- context:
+    cluster: satellite-cluster.us-east-1.eksctl.io
+    namespace: spacex
+    user: iit-lab@satellite-cluster.us-east-1.eksctl.io
+  name: iit-lab@satellite-cluster.us-east-1.eksctl.io
+current-context: iit-lab@satellite-cluster.us-east-1.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: iit-lab@satellite-cluster.us-east-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - eks
+      - get-token
+      - --cluster-name
+      - satellite-cluster
+      - --region
+      - us-east-1
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
