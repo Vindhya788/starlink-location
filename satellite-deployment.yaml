@@ -1,4 +1,9 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: spacex
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -8,7 +13,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: location-app
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:

@@ -1,10 +1,3 @@
-
-
-ADD target/location-mysql.jar location-mysql.jar
-EXPOSE 9080
-ENTRYPOINT ["java", "-jar", "location-mysql.jar"]
-
-
 # Build stage
 #
 FROM maven:3.5-jdk-8 AS build
