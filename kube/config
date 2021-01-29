@@ -7,6 +7,7 @@ clusters:
 contexts:
 - context:
     cluster: satellite-cluster.us-east-1.eksctl.io
+    namespace: spacex
     user: iit-lab@satellite-cluster.us-east-1.eksctl.io
   name: iit-lab@satellite-cluster.us-east-1.eksctl.io
 current-context: iit-lab@satellite-cluster.us-east-1.eksctl.io
@@ -28,3 +29,4 @@ users:
       env:
       - name: AWS_STS_REGIONAL_ENDPOINTS
         value: regional
+      provideClusterInfo: false
